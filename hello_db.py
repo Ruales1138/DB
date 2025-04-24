@@ -12,7 +12,7 @@ conexion = psycopg2.connect(host = PGHOST, database = PGDATABASE, user = PGUSER,
 respuesta = input('Nombre de departamento: ')
 
 cursor = conexion.cursor()
-cursor.execute(f"SELECT codigo_departamento from departamentos WHERE nombre_departamento = '{respuesta}'")
+cursor.execute(f"select codigo_municipio, nombre_municipio, codigo_departamento from municipios where codigo_municipio LIKE '%001'")
 resultado = cursor.fetchall()
 
 print(resultado)
